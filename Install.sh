@@ -62,9 +62,9 @@ requirements() {
     echo
 
 
-    # Download scripts for ubuntu noble (if not existed)
+    # Download scripts for ubuntu "Regular release (${dist_version})." (if not existed)
     if [[ ! -f "$PREFIX/etc/proot-distro/$ds_name.sh" ]]; then
-        download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/ubuntu-lts.sh" "$PREFIX/etc/proot-distro/" silence
+        download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/ubuntu-lts.sh" "$PREFIX/etc/proot-distro/" silence
     fi
 
     [[ -d "$PD/$ds_name" ]] && {
@@ -184,53 +184,53 @@ install_desktop() {
 # Different mode to download different scripts
 xfce_mode() {
     echo ${G}"Installing XFCE Desktop..."${W}
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Desktop/xfce.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Desktop/xfce.sh" $directory silence
     $login -- /bin/bash xfce.sh
     rm -rf $directory/xfce.sh
 }
 
 gnome_mode() {
     echo ${G}"Installing GNOME Desktop...."${W}
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Desktop/gnome.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Desktop/gnome.sh" $directory silence
     $login -- /bin/bash gnome.sh 
     rm -rf $directory/gnome.sh
 }
 
 mate_mode() {
     echo ${G}"Installing Mate Desktop..."${W}
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Desktop/mate.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Desktop/mate.sh" $directory silence
     $login -- /bin/bash mate.sh
     rm -rf $directory/mate.sh
 }
 
 kde_mode() {
     echo ${G}"Installing KDE Desktop..."${W}
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Desktop/kde.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Desktop/kde.sh" $directory silence
     $login -- /bin/bash kde.sh
     rm -rf $directory/kde.sh
 }
 
 cinnamon_mode() {
     echo ${G}"Installing Cinnamon Desktop..."${W}
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Desktop/cinnamon.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Desktop/cinnamon.sh" $directory silence
     $login -- /bin/bash cinnamon.sh
     rm -rf $directory/cinnamon.sh
 }
 
 win10_theme() {
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Themes/Win10-theme.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Themes/Win10-theme.sh" $directory silence
     $login -- /bin/bash Win10-theme.sh
     rm -rf $directory/Win10-theme.sh
 }
 
 win11_theme() {
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Themes/Win11-theme.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Themes/Win11-theme.sh" $directory silence
     $login -- /bin/bash Win11-theme.sh
     rm -rf $directory/Win11-theme.sh
 }
 
 macos_theme() {
-    download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Themes/MacOS-theme.sh" $directory silence
+    download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Themes/MacOS-theme.sh" $directory silence
     $login -- /bin/bash MacOS-theme.sh
     rm -rf $directory/MacOS-theme.sh
 }
@@ -242,7 +242,7 @@ apps() {
     # Install firefox
     if ask ${C}"Install Firefox Web Broswer?"${W}; then
         echo -e ${G}"\nInstalling Firefox Broswer ...." ${W}
-        download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Apps/firefox.sh" $directory silence
+        download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Apps/firefox.sh" $directory silence
         [[ -f $directory/.bashrc ]] && mv $directory/.bashrc $directory/.bak
         cat > $directory/.bashrc <<- EOF
         bash firefox.sh 
@@ -272,7 +272,7 @@ EOF
     # Install discord(webcord)
     if ask ${C}"Install Discord (Webcord)?"${W}; then
         echo -e ${G}"\nInstalling Discord ...." ${W}
-        download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Apps/webcord.sh" $directory silence
+        download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Apps/webcord.sh" $directory silence
         $login -- /bin/bash webcord.sh
         rm $directory/webcord.sh
         clear
@@ -284,7 +284,7 @@ EOF
     # Install VScode
     if ask ${C}"Install VScode?"${W}; then
         echo -e ${G}"\nInstalling Vscode ...." ${W}
-        download_script "https://raw.githubusercontent.com/23xvx/Termux-Ubuntu-Installer/main/Apps/vscodefix.sh" $directory silence
+        download_script "https://raw.githubusercontent.com/DarkDivine-Tech/Termux-Ubuntu-Installer/main/Apps/vscodefix.sh" $directory silence
         $login -- /bin/bash vscodefix.sh
         rm $directory/vscodefix.sh
     else 
